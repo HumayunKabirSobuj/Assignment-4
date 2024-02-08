@@ -82,21 +82,18 @@ function monthlySavings(array, livingCost) {
             totalIncome = totalIncome + item;
         }
         else {
-            const givenTax = item * 0.20;
-            const incomeWithoutTax = item - givenTax;
-            totalIncome = totalIncome + incomeWithoutTax;
+            const tax = item * 0.20;
+            const income = item - tax;
+            totalIncome = totalIncome + income;
         }
     }
-    const totalSaving = totalIncome - livingCost;
-    if (totalSaving >= 0) {
-        return totalSaving;
+    const saving = totalIncome - livingCost;
+    if (saving >= 0) {
+        return saving;
     }
     else {
         return "earn more";
     }
-
-
 }
-
-const input = monthlySavings([900, 2700, 3400], 10000);
+const input = monthlySavings([1500,2500], 5000);
 console.log(input);
