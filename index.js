@@ -50,7 +50,6 @@ function deleteInvalids(array){
     return finalArray;
 }
 
-*/
 
 //fourth
 
@@ -61,15 +60,43 @@ function password(obj) {
     else if (obj.birthYear.toString().length !== 4) {
         return "invalid"
     }
-
     else {
         const firstLetterUpperCase = obj.siteName.charAt(0).toUpperCase() + obj.siteName.slice(1);
         const password = firstLetterUpperCase + '#' + obj.name + '@' + obj.birthYear;
         return password;
     }
+}
+
+*/
+
+
+//fifth
+
+function monthlySavings(array, livingCost) {
+    if (Array.isArray(array) !== true || typeof livingCost !== 'number') {
+        return "invalid input"
+    }
+    let totalIncome = 0;
+    for (const item of array) {
+        if (item < 3000) {
+            totalIncome = totalIncome + item;
+        }
+        else {
+            const givenTax = item * 0.20;
+            const incomeWithoutTax = item - givenTax;
+            totalIncome = totalIncome + incomeWithoutTax;
+        }
+    }
+    const totalSaving = totalIncome - livingCost;
+    if (totalSaving >= 0) {
+        return totalSaving;
+    }
+    else {
+        return "earn more";
+    }
+
 
 }
 
-const a = password({ name: "kolimuddin", birthYear: 1990, siteName: "google" });
-// const a=password({ name: "kolimuddin" , siteName: "google" });
-console.log(a);
+const input = monthlySavings([900, 2700, 3400], 10000);
+console.log(input);
