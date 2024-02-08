@@ -1,4 +1,4 @@
-
+/*
 //first problem
 
 function calculateMoney(ticketSale){
@@ -50,7 +50,26 @@ function deleteInvalids(array){
     return finalArray;
 }
 
+*/
 
+//fourth
 
-//fifth
+function password(obj) {
+    if (!obj.name || !obj.birthYear || !obj.siteName) {
+        return "invalid"
+    }
+    else if (obj.birthYear.toString().length !== 4) {
+        return "invalid"
+    }
 
+    else {
+        const firstLetterUpperCase = obj.siteName.charAt(0).toUpperCase() + obj.siteName.slice(1);
+        const password = firstLetterUpperCase + '#' + obj.name + '@' + obj.birthYear;
+        return password;
+    }
+
+}
+
+const a = password({ name: "kolimuddin", birthYear: 1990, siteName: "google" });
+// const a=password({ name: "kolimuddin" , siteName: "google" });
+console.log(a);
