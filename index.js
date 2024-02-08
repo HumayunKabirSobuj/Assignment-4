@@ -1,4 +1,4 @@
-/*
+
 //first problem
 
 function calculateMoney(ticketSale){
@@ -67,7 +67,7 @@ function password(obj) {
     }
 }
 
-*/
+
 
 
 //fifth
